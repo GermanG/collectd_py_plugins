@@ -27,14 +27,69 @@ import MySQLdb.cursors
 
 GAUGE=[
 'history_list',
+'hash_index_cells_total',
+'hash_index_cells_used',
+'pool_size',
+'database_pages',
+'free_pages',
+'modified_pages',
+'pending_aio_log_ios',
+'pending_aio_sync_ios',
+'pending_buf_pool_flushes',
+'pending_chkp_writes',
+'pending_ibuf_aio_reads',
+'pending_log_flushes',
+'pending_log_writes',
+'pending_normal_aio_reads',
+'pending_normal_aio_writes',
+'innodb_lock_wait_secs',
+'ibuf_used_cells',
+'ibuf_free_cells',
+'ibuf_cell_count',
 'current_transactions',
 'locked_transactions ',
 'active_transactions',
 'Threads_connected',
 'Threads_running',
+'Threads_cached',
 'unflushed_log',
 'innodb_tables_in_use',
-'uncheckpointed_bytes'
+'uncheckpointed_bytes',
+'max_connections',
+'thread_cache_size',
+'table_cache',
+'innodb_lock_structs',
+'innodb_locked_tables',
+'innodb_sem_waits',
+'innodb_sem_wait_time_ms',
+'key_buffer_size',
+'query_cache_size',
+'relay_log_space',
+'binary_log_space',
+'Qcache_queries_in_cache',
+'Qcache_free_blocks',
+'Qcache_free_memory',
+'Qcache_total_blocks',
+'Key_buf_bytes_unflushed',
+'Key_buf_bytes_used',
+'Max_used_connections',
+'Open_files',
+'Open_tables',
+'State_closing_tables',
+'State_copying_to_tmp_table',
+'State_end',
+'State_freeing_items',
+'State_init',
+'State_login',
+'State_preparing',
+'State_reading_from_net',
+'State_sending_data',
+'State_sorting_result',
+'State_statistics',
+'State_updating',
+'State_writing_to_net',
+'State_none',
+'State_other'
 ]
 
 OPTIONS = {
@@ -269,7 +324,7 @@ def ss_get_mysql_stats():
         cursor.execute('SHOW PROCESSLIST')
         result = cursor.fetchall()
         for row in result:
-            state = row.get('state')
+            state = row.get('State')
             if state is None:
                 state = 'NULL'
             if state == '':
