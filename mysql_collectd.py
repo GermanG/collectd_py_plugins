@@ -922,7 +922,7 @@ def get_innodb_array(text):
             result['last_checkpoint'] = val
             
         # BUFFER POOL AND MEMORY
-        elif line.find('Total memory allocated') == 0:
+        elif line.find('Total memory allocated') == 0 and row[3] != 'by' :
             # Total memory allocated 29642194944; in additional pool allocated 0
             result['total_mem_alloc'] = to_int(row[3])
             result['additional_pool_alloc'] = to_int(row[8])
