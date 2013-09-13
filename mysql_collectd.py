@@ -104,8 +104,8 @@ OPTIONS = {
 'cache_dir': '/tmp',       # If set, this uses caching to avoid multiple calls.
 'poll_time': 30,           # Adjust to match your polling interval.
 'timezone': None,          # If not set, uses the system default.  Example: "UTC"
-'debug': True,          # Define whether you want debugging behavior.
-'debug_log': '/tmp/mysql_collectd_debug.log'          # If $debug_log is a filename, it'll be used.
+'debug': False,          # Define whether you want debugging behavior.
+'debug_log': ''          # If $debug_log is a filename, it'll be used.
 }
 CHK_OPTIONS = {
     'innodb': True,         # Do you want to check InnoDB statistics?
