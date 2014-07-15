@@ -40,7 +40,7 @@ def memory_used(process_re):
 				# print "%s %s" % (pid, a) # just debugging
 				for line in open(os.path.join('/proc', pid, 'status')): #greplike pythonese
 					if "VmRSS" in line:
-						memory += int(re.sub(' +', ' ',line).split(" ")[1])
+						memory += int(re.sub('[\t ]+', ' ',line).split(" ")[1])
 		except IOError: # proc has already terminated
 			continue
 
