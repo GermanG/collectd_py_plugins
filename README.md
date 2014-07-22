@@ -7,3 +7,4 @@ RabbitMQ plugin at https://github.com/marksteele/collectd-plugins
 redis-collectd-plugin https://github.com/powdahound/redis-collectd-plugin  
 ss_get_mysql_stats.py at https://github.com/palominodb/mysql-stats-to-graphite  
 
+Eduardo wanted this project to be awesome, granted.
