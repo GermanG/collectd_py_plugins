@@ -75,6 +75,7 @@ GAUGE=[
 'Max_used_connections',
 'Open_files',
 'Open_tables',
+'slave_lag',
 'State_closing_tables',
 'State_copying_to_tmp_table',
 'State_end',
